@@ -97,58 +97,58 @@ int main() {
     graph.printTabOfConnections();
 
    graph.displayGraph();
-//
-//    cout << "Is edge between vertex0 and vertex0? -> (read circle around vertex0): "<<  graph.adjacent(vertex0,vertex0) << endl;
-//    cout << "Is edge between vertex2 and vertex4? " << graph.adjacent(vertex2,vertex4) << endl;
-//    graph.neighbours(vertex4);
 
-//    graph.removeEdge(vertex0,vertex2);
-//    graph.printTabOfConnections();
- //   graph.removeVertex(vertex4);
-   // graph.printTabOfConnections();
-    //graph.printValueOfVertexes();
+    cout << "Is edge between vertex0 and vertex0? -> (read circle around vertex0): "<<  graph.adjacent(vertex0,vertex0) << endl;
+    cout << "Is edge between vertex2 and vertex4? " << graph.adjacent(vertex2,vertex4) << endl;
+    graph.neighbours(vertex4);
 
-//    graph.printTabOfEdges();
-//    cout << "---------------------" << endl;
-//    graph.printValueOfEdges();
-//    graph.removeVertex(vertex4);
-//    graph.printValueOfVertexes();
-//    graph.printTabOfConnections();
-//    graph.printValueOfEdges();
-//    graph.printTabOfEdges();
-//    graph.removeEdge(vertex0,vertex1);
-//    graph.printTabOfEdges();
-//    cout << "---------------------" << endl;
-//    graph.printValueOfEdges();
-//    Graph newGraph;
-//    Vertex tab[MAX];
-//    for (auto & k : tab) {
-//        Vertex newVertex;
-//        newVertex.setVertexValue(rand()%1000);
-//        k = newVertex;
-//    }
-//    srand(time(NULL));
-//    //int n=200;
-//    ofstream zapis;
-//    double ile = 0;
-//    zapis.open("/home/sony/CLionProjects/AISD2/Zadanie4A/daneInsertVertex.txt",ios::out | ios::app);
-//    double totalTime = 0;
-//    if (zapis.good()) {
-//        for (int i = 0; i < 1000; ++i) {
-//            auto start = chrono::high_resolution_clock::now();
-//            for (int j = 0; j < MAX; ++j) {
-//                newGraph.addVertex(tab[j]);
-//            }
-//            auto end = chrono::high_resolution_clock::now();
-//            chrono::duration<double> elapsed = end - start;
-//            totalTime = elapsed.count();
-//            ile += totalTime;
-//        }
-//    }
-//    zapis << MAX  << " " << ile/1000 << endl;
-//
-//    zapis.flush();
-//    zapis.close();
+    graph.removeEdge(vertex0,vertex2);
+    graph.printTabOfConnections();
+    graph.removeVertex(vertex4);
+    graph.printTabOfConnections();
+    graph.printValueOfVertexes();
+
+    graph.printTabOfEdges();
+    cout << "---------------------" << endl;
+    graph.printValueOfEdges();
+    graph.removeVertex(vertex4);
+    graph.printValueOfVertexes();
+    graph.printTabOfConnections();
+    graph.printValueOfEdges();
+    graph.printTabOfEdges();
+    graph.removeEdge(vertex0,vertex1);
+    graph.printTabOfEdges();
+    cout << "---------------------" << endl;
+    graph.printValueOfEdges();
+    Graph newGraph;
+    Vertex tab[MAX];
+    for (auto & k : tab) {
+        Vertex newVertex;
+        newVertex.setVertexValue(rand()%1000);
+        k = newVertex;
+    }
+    srand(time(NULL));
+    //int n=200;
+    ofstream zapis;
+    double ile = 0;
+    zapis.open("/home/sony/CLionProjects/AISD2/Zadanie4A/daneInsertVertex.txt",ios::out | ios::app);
+    double totalTime = 0;
+    if (zapis.good()) {
+        for (int i = 0; i < 1000; ++i) {
+            auto start = chrono::high_resolution_clock::now();
+            for (int j = 0; j < MAX; ++j) {
+                newGraph.addVertex(tab[j]);
+            }
+            auto end = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed = end - start;
+            totalTime = elapsed.count();
+            ile += totalTime;
+        }
+    }
+    zapis << MAX  << " " << ile/1000 << endl;
+
+    zapis.flush();
+    zapis.close();
 
 
     return 0;
