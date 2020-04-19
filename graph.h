@@ -22,7 +22,7 @@ public:
     int numberOfVertexes = 0;
     int numberOfEdges = 0;
     string tabOfColors[15]={"red","cyan","grey","aquamarine","pink","green", "yellow",
-                            "aquamarine4","purple","brown","white","gold","violet","tomato","blue"}; // colors in svg
+                            "aquamarine4","purple","brown","white","gold","violet","tomato","blue"};
     string tabOfShapes[15]={"box"," doubleoctagon","ellipse","circle","triangle","egg","diamond","trapezium"
                           ,"parallelogram","house","hexagon","octagon","doublecircle","invhouse","tripleoctagon"};
     Graph(){
