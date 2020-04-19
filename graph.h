@@ -7,7 +7,7 @@
 #include <iostream>
 #include "Vertex.h"
 #include "Edge.h"
-#define MAX 20
+#define MAX 500
 
 using namespace std;
 
@@ -21,7 +21,10 @@ public:
     int tabEdge[MAX];
     int numberOfVertexes = 0;
     int numberOfEdges = 0;
-
+    string tabOfColors[15]={"red","cyan","grey","aquamarine","pink","green", "yellow",
+                            "aquamarine4","purple","brown","white","gold","violet","tomato","blue"}; // colors in svg
+    string tabOfShapes[15]={"box"," doubleoctagon","ellipse","circle","triangle","egg","diamond","trapezium"
+                          ,"parallelogram","house","hexagon","octagon","doublecircle","invhouse","tripleoctagon"};
     Graph(){
         for (auto & tabOfConnection : tabOfConnections) {
             for (int & j : tabOfConnection) {
@@ -282,6 +285,33 @@ public:
             cout <<  endl;
         }
         cout <<"-----------------------------------------" << endl;
+    }
+    void displayGraph(){
+        ofstream zapis;
+        zapis.open("/home/sony/CLionProjects/AISD2/Zadanie4A/draw_graph.dot",ios::out );
+        zapis << "graph draw_graph{" << endl;
+
+        for (int i = 0; i < numberOfVertexes; ++i) {
+            zapis << "   " << tabVertex[i] << "[ color = " << tabOfColors[i % 15]
+                                    << ", shape = " << tabOfShapes[i] << ", distortion = 2, style = \" filled\", label = " << " \" "
+                                    << tabVertex[i] << "\" ];" << endl;
+        }
+        for (int j = 0; j < numberOfVertexes; ++j) {
+            for (int i = 0; i < numberOfVertexes; ++i) {
+                if (tabOfConnections[j][i] > 0 && j <= i){
+                    for (int k = 0; k < tabOfConnections[j][i]; ++k) {
+                        zapis <<"   " << tabVertex[j] << " -- " << tabVertex[i]
+                        << "[ color = " << tabOfColors[j]
+                        << ", label = \" " << tabEdgeValues[j][i] <<" \" " << " ];" << endl;
+                    }
+                }
+            }
+        }
+
+
+        zapis << "}" << endl;
+        zapis.flush();
+        zapis.close();
     }
 };
 
