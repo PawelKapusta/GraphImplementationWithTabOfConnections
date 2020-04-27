@@ -7,7 +7,7 @@
 #include <iostream>
 
 using namespace std;
-#define MAX 500
+#define MAX 800
 class Vertex  {
     int valueOnVertex = 0;
 

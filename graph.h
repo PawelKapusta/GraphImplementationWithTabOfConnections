@@ -7,7 +7,7 @@
 #include <iostream>
 #include "Vertex.h"
 #include "Edge.h"
-#define MAX 500
+#define MAX 800
 
 using namespace std;
 
